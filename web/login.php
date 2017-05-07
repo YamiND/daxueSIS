@@ -7,15 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentallela Alela! | </title>
+    <title>Login</title>
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Animate.css -->
-    <link href="https://colorlib.com/polygon/gentelella/css/animate.min.css" rel="stylesheet">
-
+    
     <!-- Custom Theme Style -->
     <link href="css/custom.min.css" rel="stylesheet">
   </head>
@@ -26,18 +24,18 @@
       <a class="hiddenanchor" id="signin"></a>
 
       <div class="login_wrapper">
-        <div class="animate form login_form">
+        <div class="form login_form">
           <section class="login_content">
-            <form>
+            <form method="POST" action="includes/processLogin.php">
               <h1>Login Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" class="form-control" placeholder="Email" name="userEmail" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" placeholder="Password" name="password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
+                <button class="btn btn-default submit" type="submit">Log in</button>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 
@@ -52,8 +50,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                  <h1>大学SIS!</h1>
+                  <p>©2017 All Rights Reserved. Code located at: <a href="https://github.com/YamiND/daxueSIS">Github</a></p>
                 </div>
               </div>
             </form>
@@ -74,7 +72,7 @@
                 <input type="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Submit</a>
+                <a class="btn btn-default submit" href="">Submit</a>
               </div>
 
               <div class="clearfix"></div>
@@ -88,8 +86,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                  <h1><i class="fa fa-paw"></i> 大学SIS!</h1>
+                  <p>©2017 All Rights Reserved. 大学SIS - Code located at: <a href="https://github.com/YamiND/daxueSIS">Github</a></p>
                 </div>
               </div>
             </form>
