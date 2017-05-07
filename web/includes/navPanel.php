@@ -1,5 +1,15 @@
-<!--Top and Side Panel-->
+<?php
 
+include_once 'includes/dbConnect.php';
+include_once 'includes/functions.php';
+
+session_start();
+
+if (login_check($mysqli) == true):
+
+?>
+
+<!--Top and Side Panel-->
   <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
@@ -15,7 +25,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2><?php echo("{$_SESSION['userFirstName']}" . " " . "{$_SESSION['userLastName']}");?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -156,7 +166,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                    <img src="images/img.jpg" alt=""><?php echo("{$_SESSION['userFirstName']}" . " " . "{$_SESSION['userLastName']}");?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -168,7 +178,7 @@
                       </a>
                     </li>
                     <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="includes/logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
 
@@ -241,5 +251,14 @@
           </div>
         </div>
         <!-- /top navigation -->
-
 <!-- /Top and Side panel -->
+
+<?php
+
+else:
+  echo "CRAP";
+  header("Location:login.php");
+  #http_response_code(403);
+endif;
+
+?>
