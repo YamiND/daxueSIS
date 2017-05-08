@@ -9,17 +9,11 @@
 
     <title>Gentallela Alela! | </title>
 
-    <!-- Bootstrap -->
-    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <?php include("includes/genericCSS.php"); ?>
     <!-- iCheck -->
     <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- jVectorMap -->
     <link href="css/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
-
-    <!-- Custom Theme Style -->
-    <link href="css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -188,14 +182,7 @@
       </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
+    <?php include("includes/genericJS.php"); ?>
     <!-- jQuery Sparklines -->
     <script src="vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
     <!-- jVectorMap -->

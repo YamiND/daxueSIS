@@ -8,9 +8,8 @@ session_start();
 if (login_check($mysqli) == true):
 
 ?>
-
 <!--Top and Side Panel-->
-  <div class="col-md-3 left_col">
+  <div class="col-md-3 left_col menu_fixed">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
               <a href="index.php" class="site_title"><i class="fa fa-graduation-cap"></i> <span>大学SIS</span></a>
@@ -21,7 +20,7 @@ if (login_check($mysqli) == true):
             <!-- menu profile quick info -->
             <div class="profile">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="images/defaultProfile.png" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -44,6 +43,40 @@ if (login_check($mysqli) == true):
                       <li><a href="index3.php">Dashboard3</a></li>
                     </ul>
                   </li>
+                <?php if (isAdmin($mysqli)): ?>
+                  <li><a><i class="fa fa-users"></i> Users(NYD) <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="createUser.php">Create User</a></li>
+                      <li><a href="editUser.php">Edit User</a></li>
+                      <li><a href="deleteUser.php">Delete User</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-university"></i> Classes(NYD) <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="assignStudentClass.php">Assign Student to Class</a></li>
+                      <li><a href="createClass.php">Create Class</a></li>
+                      <li><a href="editClass.php">Edit Class</a></li>
+                      <li><a href="deleteClass.php">Delete Class</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-calendar"></i> School Year(NYD) <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="createSchoolYear.php">Create School Year</a></li>
+                      <li><a href="editSchoolYear.php">Edit School Year</a></li>
+                    </ul>
+                  </li>
+                <?php endif; ?>
+                <?php if (isTeacher($mysqli)): ?>
+                  <li><a><i class="fa fa-pencil-square-o"></i> Assignments(NYD) <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="gradeAssignment.php">Grade Assignment</a></li>
+                      <li><a href="createAssignment.php">Create Assignment</a></li>
+                      <li><a href="editAssignment.php">Edit Assignment</a></li>
+                      <li><a href="deleteAssignment.php">Delete Assignment</a></li>
+                    </ul>
+                  </li>
+                <?php endif; ?>
+
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="form.php">General Form</a></li>
@@ -166,7 +199,7 @@ if (login_check($mysqli) == true):
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt=""><?php echo("{$_SESSION['userFirstName']}" . " " . "{$_SESSION['userLastName']}");?>
+                    <img src="images/defaultProfile.png" alt=""><?php echo("{$_SESSION['userFirstName']}" . " " . "{$_SESSION['userLastName']}");?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -181,71 +214,6 @@ if (login_check($mysqli) == true):
                     <li><a href="includes/logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
-
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
               </ul>
             </nav>
           </div>
@@ -253,10 +221,11 @@ if (login_check($mysqli) == true):
         <!-- /top navigation -->
 <!-- /Top and Side panel -->
 
+<!-- jQuery custom content scroller -->
+    <link href="vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
 <?php
 
 else:
-  echo "CRAP";
   header("Location:login.php");
   #http_response_code(403);
 endif;

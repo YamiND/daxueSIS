@@ -11,15 +11,10 @@
 
   <title>Gentallela Alela! | </title>
 
-  <!-- Bootstrap core CSS -->
-
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
+  <?php include("includes/genericCSS.php"); ?>
   <link href="css/animate.min.css" rel="stylesheet">
 
   <!-- Custom styling plus plugins -->
-  <link href="css/custom.min.css" rel="stylesheet">
   <link href="css/icheck/flat/green.css" rel="stylesheet">
 
 
@@ -1090,7 +1085,7 @@
     <!-- footer content -->
   </div>
 
-  <script src="js/bootstrap.min.js"></script>
+  <?php include("includes/genericJS.php"); ?>
 
   <!-- chart js -->
   <script src="js/chartjs/chart.min.js"></script>

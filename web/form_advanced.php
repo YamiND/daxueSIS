@@ -9,10 +9,8 @@
 
     <title>Gentallela Alela! | </title>
 
-    <!-- Bootstrap -->
-    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <?php include("includes/genericCSS.php"); ?>
+    
     <!-- Ion.RangeSlider -->
     <link href="vendors/normalize-css/normalize.css" rel="stylesheet">
     <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
@@ -21,9 +19,6 @@
     <link href="vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
 
     <link href="vendors/cropper/dist/cropper.min.css" rel="stylesheet">
-
-    <!-- Custom Theme Style -->
-    <link href="css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -1637,14 +1632,7 @@
       </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
+    <?php include("includes/genericJS.php"); ?>
     <!-- bootstrap-daterangepicker -->
     <script src="js/moment/moment.min.js"></script>
     <script src="js/datepicker/daterangepicker.js"></script>

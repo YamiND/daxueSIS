@@ -9,15 +9,9 @@
 
     <title>Gentallela Alela! | </title>
 
-    <!-- Bootstrap -->
-    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <?php include("includes/genericCSS.php"); ?>
     <!-- jVectorMap -->
     <link href="css/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
-
-    <!-- Custom Theme Style -->
-    <link href="css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -489,14 +483,8 @@
       </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
+    <?php include("includes/genericJS.php"); ?>
+
     <!-- Chart.js -->
     <script src="vendors/Chart.js/dist/Chart.min.js"></script>
     <!-- jQuery Sparklines -->
@@ -515,7 +503,7 @@
     <!-- bootstrap-daterangepicker -->
     <script src="js/moment/moment.min.js"></script>
     <script src="js/datepicker/daterangepicker.js"></script>
-    
+
     <!-- Custom Theme Scripts -->
     <script src="js/custom.min.js"></script>
 

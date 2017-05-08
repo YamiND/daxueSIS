@@ -9,15 +9,11 @@
 
     <title>Gentallela Alela! | </title>
 
-    <!-- Bootstrap -->
-    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <?php include("includes/genericCSS.php"); ?>
     <!-- bootstrap-wysiwyg -->
     <link href="vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
 
-    <!-- Custom styling plus plugins -->
-    <link href="css/custom.min.css" rel="stylesheet">
+   
   </head>
 
   <body class="nav-md">
@@ -373,14 +369,7 @@
     </div>
     <!-- /compose -->
 
-    <!-- jQuery -->
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
+    <?php include("includes/genericJS.php"); ?>
     <!-- bootstrap-wysiwyg -->
     <script src="vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
     <script src="vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
