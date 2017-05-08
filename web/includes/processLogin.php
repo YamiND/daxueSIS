@@ -18,7 +18,7 @@ if (isset($_POST['userEmail'], $_POST['password']))
     else
     {
         // Login failed, output a message via a $_SESSION variable
-		$_SESSION['invalidLogin'] = 'Username/Password Incorrect';
+		$_SESSION['invalidLogin'] = '1';
 		header('Location: ../login.php');
     }
 }
@@ -26,6 +26,6 @@ else
 {
     // The correct POST variables were not sent to this page.
     // Login failed, output a message via a $_SESSION variable
-	$_SESSION['invalidLogin'] = 'Username/Password Incorrect';
+	$_SESSION['invalidLogin'] = '1';
 	header('Location: ../login.php');
 }
