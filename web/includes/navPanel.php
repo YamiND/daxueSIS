@@ -49,6 +49,7 @@ if (login_check($mysqli) == true):
                       <li><a href="createUser.php">Create User</a></li>
                       <li><a href="editUser.php">Edit User</a></li>
                       <li><a href="deleteUser.php">Delete User</a></li>
+                      <li><a href="viewUsers.php">View Users</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-university"></i> Classes(NYD) <span class="fa fa-chevron-down"></span></a>
