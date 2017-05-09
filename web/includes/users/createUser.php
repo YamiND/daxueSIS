@@ -46,6 +46,7 @@ function createUserAccount($mysqli)
                               });
      			</script>
 <?php
+				exit;
 			}
 			else if (isset($_POST['isStudent']) && (!isset($_POST['isAdmin'], $_POST['isTeacher'])))
 			{
@@ -79,15 +80,16 @@ function createUserAccount($mysqli)
 		else
 		{
 ?> 
-   				<script type="text/javascript">
-					new PNotify({
-                                  title: 'Error Creating Account!',
-                                  text: 'At least one checkbox must be checked.',
-                                  type: 'error',
-                                  styling: 'bootstrap3'
-                              });
-     			</script>
+			<script type="text/javascript">
+				new PNotify({
+                          title: 'Error Creating Account!',
+                          text: 'At least one checkbox must be checked.',
+                          type: 'error',
+                          styling: 'bootstrap3'
+                      });
+			</script>
 <?php
+			exit;
 		}
 	
 		// Set the user's password to a random string
