@@ -140,6 +140,8 @@ function createUserAccount($mysqli)
 		                                  type: 'success',
 		                                  styling: 'bootstrap3'
 		                              });
+		   						$('#isAdmin, #isTeacher, #isStudent').iCheck('uncheck');
+              					$("#create-user-form")[0].reset();
 	   						</script>
 	<?php
 						}

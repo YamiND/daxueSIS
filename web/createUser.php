@@ -161,8 +161,6 @@
           })
           .done(function(data){
               $('#form-content').fadeIn('slow').html(data);
-              $('#isAdmin, #isTeacher, #isStudent').iCheck('uncheck');
-              $("#create-user-form")[0].reset();
           })
           .fail(function(){
             alert('Ajax Submit Failed ...');  
