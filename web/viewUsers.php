@@ -18,7 +18,6 @@
     <link href="vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
     <link href="vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
     <link href="vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -38,6 +37,7 @@
                   </div>
                   <div class="x_content">
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                      
                       <thead>
                         <tr>
                           <th>First name</th>
@@ -167,7 +167,6 @@
     <script src="vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
     <script src="vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <script src="vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
     <script src="vendors/jszip/dist/jszip.min.js"></script>
     <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
@@ -178,67 +177,15 @@
     <!-- Datatables -->
     <script>
       $(document).ready(function() {
-        var handleDataTableButtons = function() {
-          if ($("#datatable-buttons").length) {
-            $("#datatable-buttons").DataTable({
-              dom: "Bfrtip",
-              buttons: [
-                {
-                  extend: "copy",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "csv",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "excel",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "pdfHtml5",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "print",
-                  className: "btn-sm"
-                },
-              ],
-              responsive: true
-            });
-          }
-        };
-
-        TableManageButtons = function() {
-          "use strict";
-          return {
-            init: function() {
-              handleDataTableButtons();
-            }
-          };
-        }();
-
-        $('#datatable').dataTable();
-        $('#datatable-keytable').DataTable({
-          keys: true
-        });
 
         $('#datatable-responsive').DataTable();
 
-        $('#datatable-scroller').DataTable({
-          ajax: "js/datatables/json/scroller-demo.json",
-          deferRender: true,
-          scrollY: 380,
-          scrollCollapse: true,
-          scroller: true
-        });
-
-        var table = $('#datatable-fixed-header').DataTable({
-          fixedHeader: true
-        });
-
-        TableManageButtons.init();
       });
+
+      $('#datatable-responsive').on('draw.dt', function() {
+          $('#datatable-responsive').iCheck({checkboxClass: 'icheckbox_flat-green',radioClass: 'iradio_flat-green'});
+     });
+
     </script>
     <!-- /Datatables -->
   </body>
