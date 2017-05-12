@@ -60,7 +60,7 @@ function createUserAccount($mysqli)
 				
 				if (isset($_POST['student-major']) && !empty($_POST['student-major']))
 				{
-					$studentMajor = $_POST['studentMajor'];
+					$studentMajor = $_POST['student-major'];
 				}
 			}
 			else
