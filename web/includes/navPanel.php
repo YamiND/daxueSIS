@@ -1,10 +1,5 @@
 <?php
 
-include_once 'includes/dbConnect.php';
-include_once 'includes/functions.php';
-
-session_start();
-
 if (login_check($mysqli) == true):
 
 ?>

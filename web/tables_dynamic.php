@@ -1,3 +1,12 @@
+<?php
+  include_once 'includes/dbConnect.php';
+  include_once 'includes/functions.php';
+
+  session_start();
+
+  // Set permission restrictions here
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

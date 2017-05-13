@@ -1,3 +1,18 @@
+<?php
+  include_once 'includes/dbConnect.php';
+  include_once 'includes/functions.php';
+
+  session_start();
+
+  // Set permission restrictions here
+  if (!isAdmin($mysqli))
+  {
+    header("Location: /page_403.php");
+
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,7 +42,9 @@
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-        <?php include("includes/navPanel.php"); ?>
+        <?php 
+          include("includes/navPanel.php"); 
+        ?>
         
         <!-- page content -->
         <div class="right_col" role="main">
