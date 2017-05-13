@@ -47,24 +47,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Select User to Edit</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <select class="select2_single form-control" tabindex="-1" name="userID" id="userID">
-                            <option></option>
-                          <?php
-                            if ($stmt = $mysqli->prepare("SELECT userID, userEmail FROM users"))
-                            {
-                              if ($stmt->execute())
-                              {
-                                $stmt->bind_result($userID, $userEmail);
-                                $stmt->store_result();
-
-                                while ($stmt->fetch())
-                                {
-                          ?>
-                                  <option value="<?php echo $userID; ?>"><?php echo $userEmail; ?></option>
-                          <?php
-                                }
-                              }
-                            }
-                          ?>
+                            
                           </select>
                         </div>
                       </div>
@@ -251,7 +234,8 @@
               $("#edit-user-form-2").hide();
               $('#isAdmin, #isTeacher, #isStudent').iCheck('uncheck');
               $("#edit-user-form-2")[0].reset();
-
+              // On load have our users populate
+              loadUsers();
               $('#userID').val([]).trigger('change');
               $("#edit-user-form").show();
           })
@@ -259,6 +243,21 @@
             alert('Ajax Submit Failed ...');  
           });
         });
+
+        function loadUsers() {
+        $.ajax({
+            url:'/includes/users/editUserList.php',
+            type:'POST',
+            success:function(results) {
+              console.log(results);
+                $("#userID").html(results);
+            }
+        });
+      }
+        // On load have our users populate
+      loadUsers();
+
+
       });
 
       function switchUser()
@@ -271,6 +270,10 @@
         $('#userID').val([]).trigger('change');
         $("#edit-user-form").show();
       }
+
+
+      
+    
 
 
 
