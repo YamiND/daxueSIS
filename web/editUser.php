@@ -186,7 +186,6 @@
             $("#edit-user-form").hide();
 
             var userInfo = JSON.parse(data);
-            console.log(data);
 
             $('#selectedUserID').val(userInfo[0].userID);
             $('#first-name').val(userInfo[0].userFirstName);
@@ -249,7 +248,6 @@
             url:'/includes/users/editUserList.php',
             type:'POST',
             success:function(results) {
-              console.log(results);
                 $("#userID").html(results);
             }
         });
