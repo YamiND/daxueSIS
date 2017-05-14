@@ -25,8 +25,6 @@
     
     <?php include("includes/genericCSS.php"); ?>
     
-    <!-- iCheck -->
-    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- Datatables -->
     <link href="vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
@@ -103,8 +101,6 @@
 
     <?php include("includes/genericJS.php"); ?>
 
-    <!-- iCheck -->
-    <script src="vendors/iCheck/icheck.min.js"></script>
     <!-- Datatables -->
     <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -128,11 +124,6 @@
         $('#datatable-responsive').DataTable();
 
       });
-
-      $('#datatable-responsive').on('draw.dt', function() {
-          $('#datatable-responsive').iCheck({checkboxClass: 'icheckbox_flat-green',radioClass: 'iradio_flat-green'});
-     });
-
     </script>
     <!-- /Datatables -->
   </body>
