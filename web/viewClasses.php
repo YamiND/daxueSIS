@@ -62,7 +62,7 @@
                       <tbody>
 
                       <?php
-                          if ($stmt = $mysqli->prepare("SELECT classes.className, classes.classStartTime, classes.classEndTime, users.userFirstName, users.userLastName, users.userEmail FROM users INNER JOIN (classes) ON (classes.classTeacherID = users.userID)"))
+                          if ($stmt = $mysqli->prepare("SELECT classes.className, classes.classStartTime, classes.classEndTime, users.userFirstName, users.userLastName, users.userEmail FROM users INNER JOIN (classes) ON (classes.classTeacherID = users.userID) INNER JOIN (schoolYear) ON (classes.schoolYearID = schoolYear.schoolYearID AND fallSemesterStart <= CURDATE() AND springSemesterEnd >= CURDATE())"))
                           {
                               if ($stmt->execute())
                               {
