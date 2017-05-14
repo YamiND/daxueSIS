@@ -39,7 +39,7 @@ if (login_check($mysqli) == true):
                     </ul>
                   </li>
                 <?php if (isAdmin($mysqli)): ?>
-                  <li><a><i class="fa fa-users"></i> Users(NYD) <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-users"></i> Users <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="createUser.php">Create User</a></li>
                       <li><a href="editUser.php">Edit User</a></li>
@@ -53,6 +53,7 @@ if (login_check($mysqli) == true):
                       <li><a href="createClass.php">Create Class</a></li>
                       <li><a href="editClass.php">Edit Class</a></li>
                       <li><a href="deleteClass.php">Delete Class</a></li>
+                      <li><a href="viewClasses.php">View Classes</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-calendar"></i> School Year(NYD) <span class="fa fa-chevron-down"></span></a>
