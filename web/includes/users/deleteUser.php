@@ -20,6 +20,22 @@ function deleteUserAccount($mysqli)
 	{
 		$userID = $_POST['userID'];
 
+		if ($userID == $_SESSION['userID'])
+		{
+			// Make sure user can't delete their own account
+			?> 
+				<script type="text/javascript">
+					new PNotify({
+	                          title: 'Error Deleting Account!',
+	                          text: 'Can not delete own account!',
+	                          type: 'error',
+	                          styling: 'bootstrap3'
+	                      });
+				</script>
+	<?php
+			exit;
+		}
+
 		if ($stmt = $mysqli->prepare("DELETE FROM users WHERE userID = ?"))
 		{
 			$stmt->bind_param('i', $userID);

@@ -42,6 +42,7 @@ function createClass($mysqli)
 
 		if ($stmt = $mysqli->prepare("SELECT schoolYearID FROM schoolYear WHERE fallSemesterStart <= CURDATE() AND springSemesterEnd >= CURDATE()"))
 	    {
+	    	// Get the current school year ID
 	        if ($stmt->execute())
 	        {
 		        $stmt->bind_result($schoolYearID);
@@ -91,6 +92,56 @@ function createClass($mysqli)
 	                              });
 	     			</script>
 				<?php
+	    }
+
+	    if ($stmt = $mysqli->prepare("SELECT classID FROM classes WHERE classStartTime = ? AND classEndTime = ? AND classTeacherID = ? AND schoolYearID = ?"))
+	    {
+	    	$stmt->bind_param('ssii', $classStartTime, $classEndTime, $teacherID, $schoolYearID);
+
+	    	if ($stmt->execute())
+	    	{
+	    		$stmt->store_result();
+
+				if ($stmt->num_rows > 0)
+				{
+	?> 
+	   				<script type="text/javascript">
+						new PNotify({
+	                                  title: 'Error Creating Class!',
+	                                  text: 'Another class with teacher assigned for selected time period',
+	                                  type: 'error',
+	                                  styling: 'bootstrap3'
+	                              });
+	     			</script>
+	<?php
+				}
+	    	}
+	    	else
+	    	{
+	    		?> 
+			   				<script type="text/javascript">
+								new PNotify({
+			                                  title: 'Error Creating Class!',
+			                                  text: 'Data could not be executed in DB',
+			                                  type: 'error',
+			                                  styling: 'bootstrap3'
+			                              });
+			     			</script>
+	<?php
+	    	}
+	    }
+	    else
+	    {
+	?> 
+			<script type="text/javascript">
+				new PNotify({
+                              title: 'Error Creating Class!',
+                              text: 'SQL Query Prepare failed for class time',
+                              type: 'error',
+                              styling: 'bootstrap3'
+                          });
+ 			</script>
+	<?php
 	    }
 
 		if ($stmt = $mysqli->prepare("SELECT className FROM classes where schoolYearID = ? AND className = ?"))
