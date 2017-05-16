@@ -50,6 +50,7 @@ if (login_check($mysqli) == true):
                   <li><a><i class="fa fa-university"></i> Classes(NYD) <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="assignStudentClass.php">Assign Student to Class</a></li>
+                      <li><a href="removeStudentClass.php">Remove Student from Class</a></li>
                       <li><a href="createClass.php">Create Class</a></li>
                       <li><a href="editClass.php">Edit Class</a></li>
                       <li><a href="deleteClass.php">Delete Class</a></li>
