@@ -47,7 +47,7 @@ if (login_check($mysqli) == true):
                       <li><a href="viewUsers.php">View Users</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-university"></i> Classes(NYD) <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-university"></i> Classes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="assignStudentClass.php">Assign Student to Class</a></li>
                       <li><a href="removeStudentClass.php">Remove Student from Class</a></li>
