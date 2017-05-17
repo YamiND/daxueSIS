@@ -24,7 +24,7 @@ function createSchoolYear($mysqli)
 		$springSemesterEnd = $_POST['spring-semester-end'];
 		
 
-		if (($fallSemesterStart === $fallSemesterEnd && $fallSemesterEnd === $springSemesterStart && $springSemesterStart === $springSemesterEnd) || ($fallSemesterStart > $fallSemesterEnd) || ($springSemesterStart > $springSemesterEnd) || ($fallSemesterStart > $springSemesterStart) || $fallSemesterStart > $springSemesterEnd))        
+		if (($fallSemesterStart === $fallSemesterEnd && $fallSemesterEnd === $springSemesterStart && $springSemesterStart === $springSemesterEnd) || ($fallSemesterStart > $fallSemesterEnd) || ($springSemesterStart > $springSemesterEnd) || ($fallSemesterStart > $springSemesterStart) || ($fallSemesterStart > $springSemesterEnd))        
 		{
 			// Time sanitization check
 			?> 
