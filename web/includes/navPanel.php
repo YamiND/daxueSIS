@@ -61,6 +61,8 @@ if (login_check($mysqli) == true):
                     <ul class="nav child_menu">
                       <li><a href="createSchoolYear.php">Create School Year</a></li>
                       <li><a href="editSchoolYear.php">Edit School Year</a></li>
+                      <li><a href="deleteSchoolYear.php">Delete School Year</a></li>
+                      <li><a href="viewSchoolYears.php">View School Years</a></li>
                     </ul>
                   </li>
                 <?php endif; ?>
