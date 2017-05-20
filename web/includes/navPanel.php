@@ -57,7 +57,7 @@ if (login_check($mysqli) == true):
                       <li><a href="viewClasses.php">View Classes</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-calendar"></i> School Year(NYD) <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-calendar"></i> School Year <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="createSchoolYear.php">Create School Year</a></li>
                       <li><a href="editSchoolYear.php">Edit School Year</a></li>
