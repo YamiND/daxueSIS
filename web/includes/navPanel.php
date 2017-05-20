@@ -73,6 +73,7 @@ if (login_check($mysqli) == true):
                       <li><a href="createAssignment.php">Create Assignment</a></li>
                       <li><a href="editAssignment.php">Edit Assignment</a></li>
                       <li><a href="deleteAssignment.php">Delete Assignment</a></li>
+                      <li><a href="viewAssignments.php">View Assignments</a></li>
                     </ul>
                   </li>
                 <?php endif; ?>
