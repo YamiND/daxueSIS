@@ -46,7 +46,7 @@ else:
               <h1>Login</h1>
             <?php endif; ?>
               <div>
-                <input type="email" class="form-control" placeholder="Email" name="userEmail" required="" />
+                <input type="email" class="form-control" placeholder="Email" name="userEmail" required="" autofocus="" />
               </div>
               <div>
                 <input type="password" class="form-control" placeholder="Password" name="password" required="" />
