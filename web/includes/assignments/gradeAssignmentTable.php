@@ -41,6 +41,7 @@ function getAssignmentList($mysqli)
 				  	</thead>
 				  	<tbody>
 				  	
+				  	<input type="hidden" id="tableClassID" name="tableAssignmentID" value="<?php echo $classID; ?>">
 				  	<input type="hidden" id="tableAssignmentID" name="tableAssignmentID" value="<?php echo $assignmentID; ?>">
 				<?php
                         
@@ -81,17 +82,37 @@ function getAssignmentList($mysqli)
        	        		
        	        		function applyGrades()
        	        		{
-       	        			var values = {};
-
 						    $('.studentGrades').each(function() {
 						        var row = $(this)
 							 	var studentID = row.find('[name=studentID]').val()
 							    var assignmentPointsScored = row.find('[name=assignmentPointsScored]').val()
 								var assignmentID = $("#tableAssignmentID").val();
+								var classID = $("#tableClassID").val();
 
-						        alert(assignmentID + " " + studentID + " " + assignmentPointsScored );
+						        $.ajax({
+						            url:'/includes/assignments/gradeAssignment.php',
+						            type:'POST',
+						            data: { 
+						            		assignmentID: assignmentID,
+						            		studentID: studentID,
+						            		assignmentPointsScored: assignmentPointsScored,
+						            		classID: classID,
+						            	  },
+						            success:function(results) 
+						            {
+						                $("#message-content").html(results);
+						            }
+						          });
 						        //$.ajax (do your AJAX call here using values of query and text
 						    });
+
+						    new PNotify({
+				                                  title: 'Grades Updated',
+				                                  text: 'Grades have been updated',
+				                                  type: 'success',
+				                                  styling: 'bootstrap3'
+				                              });
+						    switchAssignment();
 						}
        	        	</script>
 				<?php

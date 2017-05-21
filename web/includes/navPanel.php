@@ -67,7 +67,7 @@ if (login_check($mysqli) == true):
                   </li>
                 <?php endif; ?>
                 <?php if (isTeacher($mysqli)): ?>
-                  <li><a><i class="fa fa-pencil-square-o"></i> Assignments(NYD) <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-pencil-square-o"></i> Assignments <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="gradeAssignment.php">Grade Assignment</a></li>
                       <li><a href="createAssignment.php">Create Assignment</a></li>

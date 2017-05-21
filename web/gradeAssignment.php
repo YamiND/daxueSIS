@@ -54,6 +54,7 @@
                   </div>
                   <div class="x_content">
                     <br />
+                    <div id="message-content"></div>
                     <div id="form-content"></div>
                     <form method="post" id="grade-assignment-form" class="form-horizontal form-label-left">
                       <div class="form-group">
