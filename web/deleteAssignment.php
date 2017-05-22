@@ -85,7 +85,7 @@
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-5">
                           <button type="button" class="btn btn-primary" onclick="switchClass()">Switch Class</button>
-                          <button type="submit" class="btn btn-success" name="edit" value="edit">Delete Assignment</button>
+                          <button type="submit" class="btn btn-danger" name="edit" value="edit">Delete Assignment</button>
                         </div>
                       </div>
                     </form>

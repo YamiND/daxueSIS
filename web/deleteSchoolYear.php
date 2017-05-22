@@ -61,7 +61,7 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-5">
-                          <button type="submit" class="btn btn-success">Delete School Year</button>
+                          <button type="submit" class="btn btn-danger">Delete School Year</button>
                         </div>
                       </div>
                     </form>
