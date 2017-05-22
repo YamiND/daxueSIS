@@ -13,7 +13,7 @@ if (isset($_POST['userEmail'], $_POST['password']))
     if (login($userEmail, $password, $mysqli) == true)
     {
 		// Go to our dashboard for the users
-    	header('Location: ../index.php');
+    	header('Location: ../home.php');
     }
     else
     {
