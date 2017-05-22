@@ -75,6 +75,11 @@ if (login_check($mysqli) == true):
                       <li><a href="viewAssignments.php">View Assignments</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-child"></i> Students(NYD) <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="studentGrades.php">Student Grades</a></li>
+                    </ul>
+                  </li>
                 <?php endif; ?>
                 </ul>
               </div>
